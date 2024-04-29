@@ -1,13 +1,18 @@
-describe("Bowling game", function() {
-
+describe("BowlingGame", function() {
     var game;
 
-    beforeEach(function() {
+    beforeEach(function(){
         game = new BowlingGame();
-    }):
-    
+    });
+
+    function rollMany (n, pins) {
+        for (var i = 0; i < n; i++) {
+            game.roll(pins)
+        }
+    }
+
     //doit calculer le score en fonction des quilles tombées
-    it("should properly calculate a gutter game", function() {
+    it("should handle a gutter game", function() {
         rollMany(20, 0);
         expect(game.score()).toEqual(0);
     });
@@ -17,9 +22,9 @@ describe("Bowling game", function() {
         // test
     });
     
-        //doit calculer le score si un spare est fait est fait
+    //doit calculer le score si un spare est fait est fait
     it("should properly calculate a spare", function () {
         // test
     });
-        
+
 });
